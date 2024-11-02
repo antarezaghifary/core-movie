@@ -3,8 +3,9 @@ package com.example.coremovie.data.datasource
 import com.example.coremovie.data.model.popular.PopularResponse
 import com.example.coremovie.data.remote.api.ApiService
 import com.example.coremovie.data.repository.HomeRepository
+import javax.inject.Inject
 
-class HomeDataSource(
+class HomeDataSource @Inject constructor(
     private val api: ApiService
 ) : HomeRepository {
     //code
