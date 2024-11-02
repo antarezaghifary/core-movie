@@ -26,6 +26,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            buildConfigField("String", "BASE_URL", "'https://api.themoviedb.org/3/'")
+            buildConfigField("String", "API_KEY", "'34d28168ca773abb8e7098976e940a85'")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

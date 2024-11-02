@@ -1,5 +1,8 @@
 package com.example.coremovie.domain.usecase
 
-interface HomeUsecase {
+import com.example.coremovie.data.model.popular.PopularResponse
 
+
+interface HomeUsecase {
+    suspend fun fetchPopularMovies(apiKey: String, language: String): Result<PopularResponse>
 }
