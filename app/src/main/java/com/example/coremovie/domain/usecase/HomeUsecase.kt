@@ -1,6 +1,6 @@
 package com.example.coremovie.domain.usecase
 
-import com.example.coremovie.data.model.popular.PopularResponse
+import com.example.coremovie.domain.model.popular.PopularResponse
 
 
 interface HomeUsecase {

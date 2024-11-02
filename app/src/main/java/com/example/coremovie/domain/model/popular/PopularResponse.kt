@@ -6,3 +6,4 @@ data class PopularResponse(
 	val results: List<ResultsItem>,
 	val totalResults: Int
 )
+
