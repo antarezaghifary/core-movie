@@ -10,7 +10,9 @@ import androidx.fragment.app.viewModels
 import com.example.coremovie.R
 import com.example.coremovie.databinding.FragmentHomeBinding
 import com.example.coremovie.presentation.home.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

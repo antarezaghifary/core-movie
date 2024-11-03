@@ -4,8 +4,9 @@ import com.example.coremovie.data.repository.HomeRepository
 import com.example.coremovie.domain.model.popular.PopularResponse
 import com.example.coremovie.domain.model.popular.toDomain
 import com.example.coremovie.domain.usecase.HomeUsecase
+import javax.inject.Inject
 
-class HomeInteractor(
+class HomeInteractor @Inject constructor(
     private val repo: HomeRepository
 ) : HomeUsecase {
     override suspend fun fetchPopularMovies(

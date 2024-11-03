@@ -3,8 +3,10 @@ package com.example.coremovie.presentation.home.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.coremovie.domain.interactor.HomeInteractor
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 
+@HiltViewModel
 class HomeViewModel(
     private val homeInteractor: HomeInteractor
 ) : ViewModel(){
