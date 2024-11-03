@@ -36,17 +36,19 @@ class HomeFragment : Fragment() {
         initStateApi()
     }
 
-    private fun initStateApi(){
+    private fun initStateApi() {
         viewModel.popularMoviesState.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
                     showLoadingIndicator()
                 }
+
                 is Resource.Success -> {
                     resource.data?.let { popularResponse ->
                         showPopularMovies(popularResponse)
                     }
                 }
+
                 is Resource.Error -> {
                     showError(resource.errMsg)
                 }
@@ -55,10 +57,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun showLoadingIndicator() {
-
+        Toast.makeText(context, "Loading ...", Toast.LENGTH_SHORT).show()
     }
 
     private fun showPopularMovies(popularResponse: PopularResponse) {
+        Toast.makeText(context, "$popularResponse", Toast.LENGTH_SHORT).show()
     }
 
     private fun showError(message: String?) {
