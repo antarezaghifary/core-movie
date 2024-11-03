@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.example.coremovie.R
 import com.example.coremovie.databinding.FragmentHomeBinding
 import com.example.coremovie.domain.model.popular.PopularResponse
+import com.example.coremovie.domain.model.popular.ResultsItem
 import com.example.coremovie.presentation.home.viewmodel.HomeViewModel
 import com.example.coremovie.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
 
                 is Resource.Success -> {
                     resource.data?.let { popularResponse ->
-                        showPopularMovies(popularResponse)
+                        showPopularMovies(popularResponse.results)
                     }
                 }
 
@@ -60,7 +61,7 @@ class HomeFragment : Fragment() {
         Toast.makeText(context, "Loading ...", Toast.LENGTH_SHORT).show()
     }
 
-    private fun showPopularMovies(popularResponse: PopularResponse) {
+    private fun showPopularMovies(popularResponse: List<ResultsItem>) {
         Toast.makeText(context, "$popularResponse", Toast.LENGTH_SHORT).show()
     }
 
