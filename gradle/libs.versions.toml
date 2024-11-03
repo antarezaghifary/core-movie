@@ -21,6 +21,9 @@ lifecycle = "2.7.0"
 livedata = "2.5.1"
 navigationFragmentKtx = "2.8.3"
 navigationUiKtx = "2.8.3"
+multidex = "2.0.1"
+
+#id 'kotlin-kapt'
 
 
 [libraries]
@@ -44,11 +47,13 @@ lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", vers
 livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "livedata"}
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex"}
 
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 plugin-dagger = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltCompiler"}
 

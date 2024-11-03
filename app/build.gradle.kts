@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.plugin.dagger)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 android {
@@ -10,12 +11,18 @@ android {
 
     defaultConfig {
         applicationId = "com.example.coremovie"
+        multiDexEnabled = true
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude("META-INF/gradle/incremental.annotation.processors")
+        exclude("META-INF/*")
     }
 
     buildTypes {
@@ -27,8 +34,9 @@ android {
             )
         }
         debug {
-            buildConfigField("String", "BASE_URL", "'https://api.themoviedb.org/3/'")
-            buildConfigField("String", "API_KEY", "'34d28168ca773abb8e7098976e940a85'")
+            isMinifyEnabled = false
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"34d28168ca773abb8e7098976e940a85\"")
         }
     }
     compileOptions {
@@ -43,6 +51,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -55,10 +64,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.multidex)
 
     //viewmodel
     implementation(libs.dagger)
     implementation(libs.daggerCompiler)
+
     implementation(libs.viewmodelAct)
     implementation(libs.viewmodelFrg)
     implementation(libs.gson)

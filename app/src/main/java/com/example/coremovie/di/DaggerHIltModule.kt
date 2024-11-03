@@ -1,6 +1,7 @@
 package com.example.coremovie.di
 
 import android.content.Context
+import com.example.coremovie.BuildConfig
 import com.example.coremovie.data.datasource.HomeDataSource
 import com.example.coremovie.data.remote.api.ApiService
 import com.example.coremovie.data.repository.HomeRepository
@@ -29,7 +30,7 @@ class MyModule {
 
     @Provides
     @Singleton
-    @Named("pose")
+    @Named("coremovie")
     fun provideRetrofit(@ApplicationContext appContext: Context): Retrofit {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)

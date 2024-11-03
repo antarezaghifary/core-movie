@@ -9,9 +9,10 @@ import com.example.coremovie.domain.model.popular.PopularResponse
 import com.example.coremovie.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel(
+class HomeViewModel @Inject constructor(
     private val homeInteractor: HomeInteractor
 ) : ViewModel() {
 
